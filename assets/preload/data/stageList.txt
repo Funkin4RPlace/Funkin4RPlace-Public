@@ -1,0 +1,7 @@
+stage
+consume
+bubbo
+edge
+school
+schoolEvil
+tank
