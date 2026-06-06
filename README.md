@@ -2,6 +2,13 @@
 # Funkin' 4 r/place
 An r/place mod for Friday Night Funkin'.
 
+> [!NOTE]
+> This repository contains both the demo and the release version of F4RP, all in a big unwieldy ball of data.
+> Simply check out the commit history at the relevant version tags to get where you want. (Probably.)
+> [!CAUTION]
+> The instructions below are fairly dated. You will likely run into problems if you wanted to follow them.
+> As a rule of thumb, try downgrading library versions until the errors go away.
+
 ## Download & Play
 * [GameBanana](https://gamebanana.com/mods/444552)
 
