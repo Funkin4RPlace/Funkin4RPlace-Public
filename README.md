@@ -3,10 +3,7 @@
 An r/place mod for Friday Night Funkin'.
 
 ## Download & Play
-(there are no downloads yet so if you see this then SHOO)
-* [itch.io](https://funkin4rplace.itch.io/funkin4rplace)
-* [GameBanana](#)
-* [GameJolt](https://gamejolt.com/games/funkin4rplace/707548)
+* [GameBanana](https://gamebanana.com/mods/444552)
 
 ## Building
 You must have [the most up-to-date version of Haxe](https://haxe.org/download/) (*not* Haxe 4.1.5!)
