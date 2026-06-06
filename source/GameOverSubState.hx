@@ -79,7 +79,7 @@ class GameOverSubState extends MusicBeatSubState {
 
 	public static function selfAssignVariables(char:String, voided:Float) {
 		switch(char) {
-			case 'ross-bf':
+			case 'enough-duo' | 'ross-bf':
 				characterName = 'ross-bf';
 				retrySpriteData = {name: "ross", x: -1, y: -26};
 			case 'flag-bf':
