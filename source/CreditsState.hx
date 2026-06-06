@@ -502,7 +502,7 @@ private function makeCredits():Array<{name:String, members:Array<CreditBlob>}> {
 				0x5C92FF,
 				[
 					"https://steamcommunity.com/id/Funny_Captain/",
-					"https://www.spriters-resource.com/submitter/CaptainGame17/",
+					"https://www.spriters-resource.com/submitter/fungicaptain/",
 				],
 				{x: 86, y: 162}
 			),
