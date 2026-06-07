@@ -11,13 +11,6 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		title = 'Gameplay Settings';
 		rpcTitle = 'Gameplay Settings Menu'; //for Discord Rich Presence
 
-		var option:Option = new Option('Controller Mode',
-			'Check this if you want to play with a controller instead of using your keyboard.',
-			'controllerMode',
-			'bool',
-			false);
-		addOption(option);
-
 		//I'd suggest using "Downscroll" as an example for making your own option since it is the simplest here
 		var option:Option = new Option('Downscroll', //Name
 			'If checked, notes go down instead of up, simple enough.', //Description
@@ -47,45 +40,31 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			true);
 		addOption(option);
 
+		var option:Option = new Option('Controller Mode',
+			'Check this if you want to play with a controller instead of using your keyboard.',
+			'controllerMode',
+			'bool',
+			false);
+		addOption(option);
+
+		var option:Option = new Option('Control Garbage Collector',
+			(
+				"[EXPERIMENTAL] Disable the GC during sections where input is (presumably) needed to reduce frame drops. " +
+				"WARNING: Bugs may leave the GC disabled for an unbounded amount of time, leading to eventual OOM. " +
+				"WARNING: Assumes slowly rising memory usage. NOTE: GC is shortly reenabled after 2000 frames of inactivity. " +
+				"NOTE: GC will still run in some situations regardless. It's beyond my paygrade of 0 to find out why."
+			),
+			"controlGC",
+			"bool",
+			false
+		);
+		addOption(option);
+
 		var option:Option = new Option('"Shit" Counts as Miss',
 			'If checked, getting a "Shit" rating will count as a miss.',
 			'shitMisses',
 			'bool',
 			true);
-		addOption(option);
-
-		var option:Option = new Option('Disable Reset Button',
-			"If checked, pressing Reset won't do anything.",
-			'noReset',
-			'bool',
-			false);
-		addOption(option);
-
-		var option:Option = new Option('Instant Restart',
-			"If checked, you will automatically restart after a game over.",
-			'instantRestart',
-			'bool',
-			false);
-		addOption(option);
-
-		var option:Option = new Option('Tendril Volume',
-			'Sets the volume for the song\'s tendrils (if it has any).',
-			'tendrilVolume',
-			'percent',
-			1);
-		addOption(option);
-
-		var option:Option = new Option('Hitsound Volume',
-			'A "tick" sound plays when you hit a note.',
-			'hitsoundVolume',
-			'percent',
-			0);
-		option.scrollSpeed = 1.6;
-		option.minValue = 0.0;
-		option.maxValue = 1;
-		option.changeValue = 0.1;
-		option.decimals = 1;
-		option.onChange = onChangeHitsoundVolume;
 		addOption(option);
 
 		var option:Option = new Option('Rating Offset',
@@ -143,6 +122,40 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		option.changeValue = 0.1;
 		addOption(option);
 
+		var option:Option = new Option('Disable Reset Button',
+			"If checked, pressing Reset won't do anything.",
+			'noReset',
+			'bool',
+			false);
+		addOption(option);
+
+		var option:Option = new Option('Instant Restart',
+			"If checked, you will automatically restart after a game over.",
+			'instantRestart',
+			'bool',
+			false);
+		addOption(option);
+
+		var option:Option = new Option('Tendril Volume',
+			'Sets the volume for the song\'s tendrils (if it has any).',
+			'tendrilVolume',
+			'percent',
+			1);
+		addOption(option);
+
+		var option:Option = new Option('Hitsound Volume',
+			'A "tick" sound plays when you hit a note.',
+			'hitsoundVolume',
+			'percent',
+			0);
+		option.scrollSpeed = 1.6;
+		option.minValue = 0.0;
+		option.maxValue = 1;
+		option.changeValue = 0.1;
+		option.decimals = 1;
+		option.onChange = onChangeHitsoundVolume;
+		addOption(option);
+
 		var option:Option = new Option('Auto Pause',
 			"If checked, the game will be frozen when it loses focus.",
 			'autoPause',
@@ -164,19 +177,6 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			'bool',
 			true
 			);
-		addOption(option);
-
-		var option:Option = new Option('Control Garbage Collector',
-			(
-				"[EXPERIMENTAL] Disable the GC during sections where input is (presumably) needed to reduce frame drops. " +
-				"WARNING: Bugs may leave the GC disabled for an unbounded amount of time, leading to eventual OOM. " +
-				"WARNING: Assumes slowly rising memory usage. NOTE: GC is shortly reenabled after 2000 frames of inactivity. " +
-				"NOTE: GC will still run in some situations regardless. It's beyond my paygrade of 0 to find out why."
-			),
-			"controlGC",
-			"bool",
-			true
-		);
 		addOption(option);
 
 		super();
