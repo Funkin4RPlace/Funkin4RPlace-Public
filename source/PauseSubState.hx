@@ -63,9 +63,10 @@ class PauseSubState extends MusicBeatSubState
 			menuItemsOG.insert(4 + num, 'Toggle Practice Mode');
 			menuItemsOG.insert(5 + num, 'Toggle Botplay');
 		}
-		if (PlayState.isStoryMode && PlayState.seenCutscene) {
-			menuItemsOG.insert(2, 'Restart Cutscene');
-		}
+		// @Square789: Comment this out, as f4rp has no cutscenes.
+		// if (PlayState.isStoryMode && PlayState.seenCutscene) {
+		// 	menuItemsOG.insert(2, 'Restart Cutscene');
+		// }
 		menuItems = menuItemsOG;
 
 		song = PlayState.SONG.freeplaySongData;
