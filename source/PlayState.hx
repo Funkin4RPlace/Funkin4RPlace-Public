@@ -4932,6 +4932,8 @@ class PlayState extends MusicBeatState
 						charMembers = gfMembers;
 				}
 				if (charData[1] != null) index = Std.parseInt(charData[1]);
+				// var dstr = charMembers == dadMembers ? "dad" : (charMembers == boyfriendMembers ? "bf" : (charMembers == gfMembers ? "gf" : "?"));
+				// trace('Play Animation $value1 $dstr[$index]');
 				if (charMembers[index % charMembers.length] != null && charMembers[index % charMembers.length].animOffsets.exists(value1)) {
 					charMembers[index % charMembers.length].playAnim(value1, true);
 					charMembers[index % charMembers.length].specialAnim = true;
