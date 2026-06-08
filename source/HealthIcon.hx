@@ -29,7 +29,7 @@ class HealthIcon extends FlxSprite
 	private var isPlayer:Bool = false;
 	private var char:String = '';
 	private var yOffset:Float = 0;
-	var originalChar:String = 'bf-old';
+	var originalChar:String = 'goldbf-pixel';
 	public var iconJson:IconFile;
 
 	public function new(char:String = 'bf', isPlayer:Bool = false)
@@ -178,7 +178,7 @@ class HealthIcon extends FlxSprite
 		var json:IconFile = cast Json.parse(rawJson);
 		if (json.fps == null) json.fps = 24;
 		if (json.yOffset == null) json.yOffset = 0;
-		if (json.oldIcon == null) json.oldIcon = 'bf-old';
+		if (json.oldIcon == null) json.oldIcon = 'goldbf-pixel';
 		return json;
 	}
 }
