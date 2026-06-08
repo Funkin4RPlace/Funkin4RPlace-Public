@@ -23,7 +23,7 @@
 	],
 	"position": [0, 0],
 	"camera_position": [-1200, -162],
-	"healthicon": "voidphantom-pixel",
+	"healthicon": "voidking-pixel",
 	"healthbar_colors": [3, 3, 3],
 	"reversed_layers": true
 }
