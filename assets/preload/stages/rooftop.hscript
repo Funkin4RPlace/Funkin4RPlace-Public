@@ -49,7 +49,7 @@ function onCreate() {
 	var pyramid = new BGSprite("rooftop/pyramid", 130, -24, 0.7, 0.7);
 	var buildingPeace = new BGSprite("rooftop/building_peace", 120, 76, 0.75, 0.75);
 	var buildingBeatSaber = new BGSprite("rooftop/building_beat_saber", 10, -14, 0.82, 0.82);
-	var dissenter = new BGSprite("rooftop/HANKMAN", 40, -15, 0.82, 0.82, ["Hanky"], true, 10);
+	var protagonist = new BGSprite("rooftop/HANKMAN", 40, -15, 0.82, 0.82, ["Hanky"], true, 10);
 
 	var buildingTower = new BGSprite("rooftop/building_tower", 274, 10, 0.92, 0.92);
 	var buildingSmash = new BGSprite("rooftop/building_smash", 16, 138, 0.9, 0.9);
@@ -82,7 +82,7 @@ function onCreate() {
 		finalsetup.push(x.sprite);
 	}
 	for (x in [
-		skylineBack, skylineFront, pyramid, buildingPeace, buildingBeatSaber, dissenter, buildingTower, buildingSmash,
+		skylineBack, skylineFront, pyramid, buildingPeace, buildingBeatSaber, protagonist, buildingTower, buildingSmash,
 		building, tank, windowNiko, windowEmpty
 	]) {
 		finalsetup.push(x);
