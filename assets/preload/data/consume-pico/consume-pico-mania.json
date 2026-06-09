@@ -24354,7 +24354,7 @@
 		"freeplaySongData": {
 			"songName": null,
 			"availableMixes": [
-				"Original",
+				"Base",
 				"Pico"
 			],
 			"difficulties": null,

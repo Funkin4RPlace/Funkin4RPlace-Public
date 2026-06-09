@@ -15,11 +15,11 @@ class SongData {
 
 	/**
 	 * Contains each of the song's variations/mixes as a string, unformatted.
-	 * Will at least be of length 1 and contain "Original".
+	 * Will at least be of length 1 and contain "Base".
 	 */
 	public var availableMixes:Array<String>;
 
-	public static final DEFAULT_MIX = 'Original';
+	public static final DEFAULT_MIX = "Base";
 
 	public function new(songData:Array<Dynamic>) {
 		if (songData.length < 3) {
