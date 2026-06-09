@@ -62,8 +62,8 @@ var SPREADS:Array<Array<QuoteArgs>> = [
 	// [
 	// 	{text: "Hi, i forcibly break the page!", slotControl: ["PAGEBREAK"], color: 0xFF030303},
 	// 	{text: "And I am on the next one (hopefully)", postPadding: 16, color: 0xFF030303},
-	// 	{text: "Hi, the following line is tagged with IGNORE_ADVANCE", color: 0xFF030303},
-	// 	{text: "_______________", slotControl: ["IGNORE_ADVANCE"], color: 0xFF030303},
+	// 	{text: "Hi, the following line is tagged with UNDO_ADVANCE", color: 0xFF030303},
+	// 	{text: "_______________", slotControl: ["UNDO_ADVANCE"], color: 0xFF030303},
 	// 	{text: "and i'm on that line!", textSize: 12, color: 0xAA0004FF},
 	// 	{image: {name: "scrooge", scale: 0.5}, offset: {x: -320.0, y: -100.0}},
 	// 	{text: "fucking badass teal-palette image of scrooge mcduck", offset: {x: -320.0, y: 0.0}, textSize: 16, color: 0xFF1F9FBF, widthOverride: 260.0},
@@ -75,7 +75,7 @@ var SPREADS:Array<Array<QuoteArgs>> = [
 	// 	{text: "Two", color: 0xAA0004FF},
 	// 	{text: "Three", color: 0xAA0004FF},
 	// 	{text: "Four", color: 0xAA0004FF},
-	// 	{text: "4.5 IGNORE_ADVANCE", textSize: 14, color: 0xAA0004FF, offset: {x: 80.0, y: -60.0}, slotControl: ["IGNORE_ADVANCE"]},
+	// 	{text: "4.5 UNDO_ADVANCE", textSize: 14, color: 0xAA0004FF, offset: {x: 80.0, y: -60.0}, slotControl: ["UNDO_ADVANCE"]},
 	// 	{text: "Five", color: 0xAA0004FF},
 	// 	{text: "Six", color: 0xAA0004FF},
 	// 	{text: "Seven", color: 0xAA0004FF},
@@ -129,7 +129,7 @@ class LorebookQuoteSlot extends QuoteSlot {
 
 	override function onQuotePlacementDone() {
 		super.onQuotePlacementDone();
-		if (currentQuoteControlParameters.contains("IGNORE_ADVANCE")) {
+		if (currentQuoteControlParameters.contains("UNDO_ADVANCE")) {
 			currentPage = currentPageOnQuoteBegin;
 		}
 		currentQuoteNoAutoPagebreak = false;
@@ -398,7 +398,7 @@ class LorebookState extends MusicBeatState {
 								})
 							],
 							offset: i == 0 ? null : {x: 0, y: (i - 1) * 62},
-							slotControl: i == 0 ? [] : ["IGNORE_ADVANCE", "IGNORE_OFFSET_X", "IGNORE_OFFSET_Y"],
+							slotControl: i == 0 ? [] : ["UNDO_ADVANCE", "IGNORE_OFFSET_X", "IGNORE_OFFSET_Y"],
 						}),
 						spoilerGroup,
 						PAGE_WIDTH,

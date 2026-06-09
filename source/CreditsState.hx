@@ -608,7 +608,7 @@ private function makeCredits():Array<{name:String, members:Array<CreditBlob>}> {
 				Representation.PORTRAIT,
 				"syembol",
 				[
-					{text: "Hello    .", slotControl: ["IGNORE_ADVANCE"]},
+					{text: "Hello    .", slotControl: ["UNDO_ADVANCE"]},
 					{color: 0xFF0000FF, text: "      Bro "},
 					{text: "im Syembol. You're probably wondering how i ended up here! Well.... It's a Long Story. Let's just say its like r/Place!"},
 					{text: "Jokes Aside, if Anyone else besides the dev team is seeing this... the mod is done! And released! I hope you had a good time with it. We poured a bunch of Effort into it. lots of Coffee cups drunk and drank. Good times had!"},

@@ -7,7 +7,7 @@
 		{"text": "Enjoy reading!", "textSize": 20, "offset": {"x": 0, "y": 120}, "color": [3, 3, 3], "slotControl": ["PAGEBREAK"]},
 
 		{"image": {"name": "sir_sins", "scale": 0.75}, "offset": {"x": 60, "y": 35}},
-		{"text": "Pictured: Sir Sins", "offset": {"x": 110, "y": -65}, "textSize": 14, "color": [82, 82, 82], "widthOverride": 260.0, "slotControl": ["IGNORE_ADVANCE"]},
+		{"text": "Pictured: Sir Sins", "offset": {"x": 110, "y": -65}, "textSize": 14, "color": [82, 82, 82], "widthOverride": 260.0, "slotControl": ["UNDO_ADVANCE"]},
 		{"text": "Primary Author of This Book.", "offset": {"x": 80, "y": -46}, "textSize": 14, "color": [82, 82, 82], "widthOverride": 260.0}
 	],
 	[
@@ -76,7 +76,7 @@
 		{"text": "The second major attempt by the Swarm to take over the canvas, dominating the top right of the canvas before being no-diffed by a large lemon.", "textSize": 18, "color": [3, 3, 3]}
 	],
 	[
-		{"image": {"name": "polaroids/void_king2", "scale": 1}, "offset": {"x": -50, "y": -32}, "slotControl": ["IGNORE_ADVANCE", "NO_AUTO_PAGEBREAK"]},
+		{"image": {"name": "polaroids/void_king2", "scale": 1}, "offset": {"x": -50, "y": -32}, "slotControl": ["UNDO_ADVANCE", "NO_AUTO_PAGEBREAK"]},
 		{"text": "\"Void King\"", "textSize": 30, "color": [252, 252, 252], "offset": {"x": 84, "y": 25}, "slotControl": ["PAGEBREAK"]},
 
 		{"text": "The final major attempt by the Swarm to take over the canvas,", "textSize": 18, "color": [3, 3, 3], "offset": {"x": 0, "y": 15}},
@@ -221,14 +221,14 @@
 		{"text": "Concept scribble for a possible game over screen, by RaytheMaymay.", "textSize": 16, "color": [3, 3, 3]}
 	],
 	[
-		{"image": {"name": "other/early/flaggf1", "scale": 0.25}, "offset": {"x": 0, "y": 25}, "slotControl": ["IGNORE_ADVANCE"]},
-		{"text": "early/flaggf1", "offset": {"x": 0, "y": 0}, "textSize": 14, "color": [82, 82, 82], "slotControl": ["IGNORE_ADVANCE"]},
+		{"image": {"name": "other/early/flaggf1", "scale": 0.25}, "offset": {"x": 0, "y": 25}, "slotControl": ["UNDO_ADVANCE"]},
+		{"text": "early/flaggf1", "offset": {"x": 0, "y": 0}, "textSize": 14, "color": [82, 82, 82], "slotControl": ["UNDO_ADVANCE"]},
 		
-		{"image": {"name": "other/early/flaggf3", "scale": 0.35}, "offset": {"x":  220, "y": 0}, "slotControl": ["IGNORE_ADVANCE"]},
-		{"text": "early/flaggf3", "offset": {"x": 220, "y": 0}, "textSize": 14, "color": [82, 82, 82], "slotControl": ["IGNORE_ADVANCE"]},
+		{"image": {"name": "other/early/flaggf3", "scale": 0.35}, "offset": {"x":  220, "y": 0}, "slotControl": ["UNDO_ADVANCE"]},
+		{"text": "early/flaggf3", "offset": {"x": 220, "y": 0}, "textSize": 14, "color": [82, 82, 82], "slotControl": ["UNDO_ADVANCE"]},
 
-		{"image": {"name": "other/early/flaggf2", "scale": 0.28}, "offset": {"x": 64, "y": 113}, "slotControl": ["IGNORE_ADVANCE"]},
-		{"text": "early/flaggf2", "offset": {"x": 64, "y": 275}, "textSize": 14, "color": [82, 82, 82], "slotControl": ["IGNORE_ADVANCE"]},
+		{"image": {"name": "other/early/flaggf2", "scale": 0.28}, "offset": {"x": 64, "y": 113}, "slotControl": ["UNDO_ADVANCE"]},
+		{"text": "early/flaggf2", "offset": {"x": 64, "y": 275}, "textSize": 14, "color": [82, 82, 82], "slotControl": ["UNDO_ADVANCE"]},
 
 		
 		{"text": "Early FlagGF design and sketches, by Pale Artist and [Uncredited by Request].", "textSize": 14, "color": [3, 3, 3], "offset": {"x": 0, "y": 296}},
@@ -236,25 +236,25 @@
 		{"text": "(maybe that could change…?)", "textSize": 14, "color": [82, 82, 82], "offset": {"x": 0, "y": -15}},
 
 
-		{"image": {"name": "I'mKillingRayForThis", "scale": 1}, "offset": {"x": -8, "y": 180}, "slotControl": ["IGNORE_ADVANCE", "NO_AUTO_PAGEBREAK"]},
+		{"image": {"name": "I'mKillingRayForThis", "scale": 1}, "offset": {"x": -8, "y": 180}, "slotControl": ["UNDO_ADVANCE", "NO_AUTO_PAGEBREAK"]},
 		{"image": {"name": "other/early/flaggf4", "scale": 0.5}, "offset": {"x": 25, "y": 35}},
-		{"text": "early/flaggf4", "offset": {"x": 25, "y": -15}, "textSize": 14, "color": [82, 82, 82], "slotControl": ["IGNORE_ADVANCE"]},
+		{"text": "early/flaggf4", "offset": {"x": 25, "y": -15}, "textSize": 14, "color": [82, 82, 82], "slotControl": ["UNDO_ADVANCE"]},
 		{"text": "FlagGF mid-progress, by RaytheMaymay.", "textSize": 18, "color": [3, 3, 3], "offset": {"x": 0, "y": 15}},
-		{"text": "“I FUCKING LOVE spriting high heels", "textSize": 18, "color": [3, 3, 3], "offset": {"x": 0, "y": 19}, "slotControl": ["IGNORE_ADVANCE"]},
-		{"text": "IT MAKES ME WANNA brings me so much joy” - RaytheMaymay", "textSize": 18, "color": [3, 3, 3], "offset": {"x": 0, "y": 76}, "slotControl": ["IGNORE_ADVANCE"]},
-		{"text": "spriting high", "textSize": 16, "color": [252, 252, 252], "offset": {"x": 184, "y": 19}, "slotControl": ["IGNORE_ADVANCE"]},
-		{"text": "\nheels", "textSize": 16, "color": [252, 252, 252], "offset": {"x": 5, "y": 19}, "slotControl": ["IGNORE_ADVANCE","IGNORE_OFFSET_X"]},
-		{"text": "brings me so", "textSize": 16, "color": [252, 252, 252], "offset": {"x": 204, "y": 74}, "slotControl": ["IGNORE_ADVANCE"]},
-		{"text": "\nmuch joy", "textSize": 16, "color": [252, 252, 252], "offset": {"x": 2, "y": 76}, "slotControl": ["IGNORE_ADVANCE"]},
+		{"text": "“I FUCKING LOVE spriting high heels", "textSize": 18, "color": [3, 3, 3], "offset": {"x": 0, "y": 19}, "slotControl": ["UNDO_ADVANCE"]},
+		{"text": "IT MAKES ME WANNA brings me so much joy” - RaytheMaymay", "textSize": 18, "color": [3, 3, 3], "offset": {"x": 0, "y": 76}, "slotControl": ["UNDO_ADVANCE"]},
+		{"text": "spriting high", "textSize": 16, "color": [252, 252, 252], "offset": {"x": 184, "y": 19}, "slotControl": ["UNDO_ADVANCE"]},
+		{"text": "\nheels", "textSize": 16, "color": [252, 252, 252], "offset": {"x": 5, "y": 19}, "slotControl": ["UNDO_ADVANCE","IGNORE_OFFSET_X"]},
+		{"text": "brings me so", "textSize": 16, "color": [252, 252, 252], "offset": {"x": 204, "y": 74}, "slotControl": ["UNDO_ADVANCE"]},
+		{"text": "\nmuch joy", "textSize": 16, "color": [252, 252, 252], "offset": {"x": 2, "y": 76}, "slotControl": ["UNDO_ADVANCE"]},
 
-		{"text": "I fucking love working on this shit all day with 0 motivation to do so so I'm just kinda throwing myself at it whilst staring at a VSCode window for basically the entire day whilst getting NOTHING done I love f4rp so much", "textSize": 1, "color": [3, 3, 3], "offset": {"x":  999999, "y": 0}, "slotControl": ["IGNORE_ADVANCE"]}
+		{"text": "I fucking love working on this shit all day with 0 motivation to do so so I'm just kinda throwing myself at it whilst staring at a VSCode window for basically the entire day whilst getting NOTHING done I love f4rp so much", "textSize": 1, "color": [3, 3, 3], "offset": {"x":  999999, "y": 0}, "slotControl": ["UNDO_ADVANCE"]}
 	],
 	[
-		{"image": {"name": "other/early/flagpico1", "scale": 0.35}, "offset": {"x": 0, "y": 25}, "slotControl": ["IGNORE_ADVANCE"]},
-		{"text": "early/flagpico1", "offset": {"x": 0, "y": 0}, "textSize": 14, "color": [82, 82, 82], "slotControl": ["IGNORE_ADVANCE"]},
+		{"image": {"name": "other/early/flagpico1", "scale": 0.35}, "offset": {"x": 0, "y": 25}, "slotControl": ["UNDO_ADVANCE"]},
+		{"text": "early/flagpico1", "offset": {"x": 0, "y": 0}, "textSize": 14, "color": [82, 82, 82], "slotControl": ["UNDO_ADVANCE"]},
 		
-		{"image": {"name": "other/early/flagpico2", "scale": 0.4}, "offset": {"x":  200, "y": 97}, "slotControl": ["IGNORE_ADVANCE"]},
-		{"text": "early/flagpico2", "offset": {"x": 200, "y": 72}, "textSize": 14, "color": [82, 82, 82], "slotControl": ["IGNORE_ADVANCE"]},
+		{"image": {"name": "other/early/flagpico2", "scale": 0.4}, "offset": {"x":  200, "y": 97}, "slotControl": ["UNDO_ADVANCE"]},
+		{"text": "early/flagpico2", "offset": {"x": 200, "y": 72}, "textSize": 14, "color": [82, 82, 82], "slotControl": ["UNDO_ADVANCE"]},
 
 		
 		{"text": "Early FlagPico design concepts, by Pale Artist and Bruno respectively.", "textSize": 16, "color": [3, 3, 3], "offset": {"x": 0, "y": 220}},
@@ -266,7 +266,7 @@
 		{"text": "(this is that reference)", "textSize": 14, "color": [82, 82, 82], "offset": {"x": 0, "y": -15}}
 	],
 	[
-		{"image": {"name": "other/early/phantom2", "scale": 1}, "offset": {"x": 25, "y": 25}, "slotControl": ["IGNORE_ADVANCE"]},
+		{"image": {"name": "other/early/phantom2", "scale": 1}, "offset": {"x": 25, "y": 25}, "slotControl": ["UNDO_ADVANCE"]},
 		{"text": "early/phantom2", "offset": {"x": 25, "y": 325}, "textSize": 14, "color": [82, 82, 82]},
 		{"text": "Early Void Phantom, by Syembol.", "textSize": 14, "color": [3, 3, 3], "slotControl": ["PAGEBREAK"]},
 
@@ -338,7 +338,7 @@
 		{"text": "fun/dsides_flags", "offset": {"x": 25, "y": -15}, "textSize": 14, "color": [82, 82, 82]},
 		{"image": {"name": "other/fun/dsides_flaggf", "scale": 0.22}, "offset": {"x": 25, "y": 0}},
 		{"text": "fun/dsides_flaggf", "offset": {"x": 25, "y": -15}, "textSize": 14, "color": [82, 82, 82]},
-		{"text": "D-Sides FlagBF and FlagGF concepts, by Pale Artist.", "textSize": 16, "color": [3, 3, 3], "slotControl": ["IGNORE_ADVANCE", "NO_AUTO_PAGEBREAK", "PAGEBREAK"]},
+		{"text": "D-Sides FlagBF and FlagGF concepts, by Pale Artist.", "textSize": 16, "color": [3, 3, 3], "slotControl": ["UNDO_ADVANCE", "NO_AUTO_PAGEBREAK", "PAGEBREAK"]},
 
 		{"image": {"name": "other/fun/dsides_flaggf2", "scale": 0.25}, "offset": {"x": 25, "y": 25}},
 		{"text": "fun/dsides_flaggf2", "offset": {"x": 25, "y": -15}, "textSize": 14, "color": [82, 82, 82]},
@@ -415,7 +415,7 @@
 		{"text": "If you're reading this, you've reached the end of the Lorebook. From this distant writer, I must extend my thanks for taking the time to indulge in our “funky” little ideas.", "textSize": 19, "color": [3, 3, 3]},
 		{"text": "Truthfully, this mod probably doesn't do the best job of representing r/place as a whole, but we hope you've enjoyed this small piece of what was once a very large and legendary pie.", "textSize": 19, "color": [3, 3, 3], "slotControl": ["PAGEBREAK"]},
 
-		{"image": {"name": "other/ThankYouSoMuchForToPlayingOurGame", "scale": 0.75}, "offset": {"x": 50, "y": 135}, "slotControl": ["IGNORE_ADVANCE"]},
+		{"image": {"name": "other/ThankYouSoMuchForToPlayingOurGame", "scale": 0.75}, "offset": {"x": 50, "y": 135}, "slotControl": ["UNDO_ADVANCE"]},
 		{"text": "Thanks for", "textSize": 35, "color": [3, 3, 3], "offset": {"x": 76, "y": 25}},
 		{"text": "playing", "textSize": 35, "color": [3, 3, 3], "offset": {"x": 108, "y": -20}, "slotControl": ["IGNORE_OFFSET_Y"]},
 		{"text": "Funkin 4 r/place!", "textSize": 35, "color": [3, 3, 3], "offset": {"x": 5, "y": -35}}

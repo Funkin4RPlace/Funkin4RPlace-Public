@@ -588,11 +588,11 @@ class QuoteSlot {
 	 * May be overridden to introduce effects that are supposed to happen after a quote's placement.
 	 * Note that `currentQuoteControlParameters` and `currentQuoteOffset` are still available.
 	 *
-	 * By default, resets `currentPosition` to `currentQuoteStartPosition` if `IGNORE_ADVANCE` is present in
+	 * By default, resets `currentPosition` to `currentQuoteStartPosition` if `UNDO_ADVANCE` is present in
 	 * the current slot control parameters.
 	 */
 	function onQuotePlacementDone() {
-		if (currentQuoteControlParameters.contains("IGNORE_ADVANCE")) {
+		if (currentQuoteControlParameters.contains("UNDO_ADVANCE")) {
 			currentPosition = currentQuoteStartPosition;
 		}
 	}
