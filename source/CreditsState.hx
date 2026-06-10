@@ -432,7 +432,7 @@ private function makeCredits():Array<{name:String, members:Array<CreditBlob>}> {
 							"I'm Sir Sins, the person who made the original post on Reddit back when r/place " +
 							"happened. Never would've thought it'd come this far, and that the dev team would turn " +
 							"into a massive friend group, but hey, you think I'm complaining?\n\n" +
-							"Mod's nice and all, but I have a far greater apprecitation for the people I met on the " +
+							"Mod's nice and all, but I have a far greater appreciation for the people I met on the " +
 							"way, AKA, the rest of the dev team. Go check their quotes, see what they have to say " +
 							"and enjoy the mod, if you will...\n\n" +
 							"Once the keeper of chaos, always the keeper of chaos. Thanks for playing!"
@@ -707,6 +707,7 @@ private function makeCredits():Array<{name:String, members:Array<CreditBlob>}> {
 									"day 1 of development and are very much out of date."
 								),
 							},
+							{text: "Fun fact: This quote has been added only so i had a commit for testing!"},
 							{text: "Fact: The Fact Sphere is always right!"},
 							{text: "FICSIT does not waste!"},
 							{text: "Objects in mirror are closer than they appear!"},
