@@ -1,0 +1,35 @@
+{ "frames": {
+   "geysers0": {
+    "frame": { "x": 0, "y": 0, "w": 70, "h": 85 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 544, "y": 7, "w": 70, "h": 85 },
+    "sourceSize": { "w": 720, "h": 405 },
+    "duration": 100
+   },
+   "geysers1": {
+    "frame": { "x": 70, "y": 0, "w": 70, "h": 85 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 544, "y": 7, "w": 70, "h": 85 },
+    "sourceSize": { "w": 720, "h": 405 },
+    "duration": 100
+   },
+   "geysers2": {
+    "frame": { "x": 0, "y": 85, "w": 70, "h": 85 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 544, "y": 7, "w": 70, "h": 85 },
+    "sourceSize": { "w": 720, "h": 405 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.3.17.2-x64",
+  "image": "France_Geysers.png",
+  "format": "RGBA8888",
+  "size": { "w": 140, "h": 170 },
+  "scale": "1"
+ }
+}

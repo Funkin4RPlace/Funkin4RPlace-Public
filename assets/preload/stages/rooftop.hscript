@@ -26,7 +26,7 @@ function onCreate() {
 	var sky = new BGSprite("rooftop/sky", skyOrigin.x, skyOrigin.y, skySF.x, skySF.y);
 	var skyBeams = new BGSprite("rooftop/sky_beams", skyOrigin.x, skyOrigin.y, skySF.x, skySF.y);
 	var moon = new BGSprite("rooftop/moon", skyOrigin.x + 414, skyOrigin.y + 10, skySF.x, skySF.y);
-	var france = new BGSprite("rooftop/france", skyOrigin.x + 547, skyOrigin.y + 7, skySF.x, skySF.y);
+	var france = new BGSprite("rooftop/France_Geysers", skyOrigin.x, skyOrigin.y, skySF.x, skySF.y, ["geysers"], true, 6);
 
 	// For some reason, these things are very unbothered by modifications to their Y (pixel scale is applied?), but not their X
 	// i am at this point so done with fnf code, have a crappy hack on top
