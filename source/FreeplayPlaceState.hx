@@ -475,7 +475,11 @@ class FreeplayPlaceState extends MusicBeatState {
 	}
 
 	public function changeSelectedSong(by:Int) {
+		var oldSong = displayedSongs[selectedSongIdx];
+		var oldDifficulty = oldSong.difficulties[selectedDifficultyIdx];
+		var oldMixCount = oldSong.availableMixes.length;
 		selectedSongIdx = CoolUtil.wrapModulo(selectedSongIdx + by, displayedSongs.length);
+		retainOldDifficulty(oldDifficulty);
 
 		var newSong = displayedSongs[selectedSongIdx];
 
@@ -484,7 +488,6 @@ class FreeplayPlaceState extends MusicBeatState {
 		repositionSongArrows();
 
 		newSong.mixId = selectedMixIdx;
-		retainOldDifficulty(by, 0);
 
 		final FOCUS_OFFSET_X = -30.0;
 		final FOCUS_OFFSET_Y = -20.0;
@@ -504,10 +507,125 @@ class FreeplayPlaceState extends MusicBeatState {
 		);
 		FlxTween.tween(canvasCamera, {zoom: z}, duration, {ease: eases[1]});
 
-		// TODO: Maybe recolor something else to the song's color
+		// Hardcoded af who cares
+		var oldDisplayMixSelector = oldMixCount > 1;
+		var newDisplayMixSelector = newSong.availableMixes.length > 1;
+		final TWEEN_TIME = 0.12;
+		if (by == 0 || oldDisplayMixSelector != newDisplayMixSelector) {
+			FlxTween.cancelTweensOf(songNameText);
+			FlxTween.cancelTweensOf(mixNameText);
+			if (newDisplayMixSelector) {
+				// show
+				FlxTween.tween(
+					songNameText,
+					{y: 220},
+					TWEEN_TIME,
+					{
+						ease: FlxEase.cubeOut,
+						onUpdate: function (twn) {
+							var tsz = FlxMath.maxInt(36, 42 - Std.int(twn.percent / 0.25) * 2);
+							if (songNameText.size != tsz) {
+								songNameText.size = tsz;
+							}
+							centerAroundX(songNameText, optionBarCenterX);
+							repositionSongArrows();
+						},
+						onComplete: function (twn) {
+							// since i don't think it always gets called with percent == 1.0
+							songNameText.size = 36;
+							centerAroundX(songNameText, optionBarCenterX);
+							repositionSongArrows();
+						}
+					}
+				);
+				FlxTween.tween(
+					mixNameText,
+					{alpha: 1.0},
+					TWEEN_TIME,
+					{
+						ease: FlxEase.sineIn,
+						onUpdate: function (twn) {
+							mixRightArrow.alpha = mixLeftArrow.alpha = mixNameText.alpha;
+						},
+						onComplete: function (twn) {
+							mixRightArrow.alpha = mixLeftArrow.alpha = mixNameText.alpha;
+						}
+					}
+				);
+			} else {
+				// hide
+				FlxTween.tween(
+					songNameText,
+					{y: 238},
+					TWEEN_TIME,
+					{
+						ease: FlxEase.cubeOut,
+						onUpdate: function (twn) {
+							var tsz = 36 + Std.int(twn.percent / 0.4) * 2;
+							if (songNameText.size != tsz) {
+								songNameText.size = tsz;
+							}
+							centerAroundX(songNameText, optionBarCenterX);
+							repositionSongArrows();
+						},
+						onComplete: function (twn) {
+							// since i don't think it always gets called with percent == 1.0
+							songNameText.size = 42;
+							centerAroundX(songNameText, optionBarCenterX);
+							repositionSongArrows();
+						}
+					}
+				);
+				FlxTween.tween(
+					mixNameText,
+					{alpha: 0.0},
+					TWEEN_TIME,
+					{
+						ease: FlxEase.cubeOut,
+						onUpdate: function (twn) {
+							mixRightArrow.alpha = mixLeftArrow.alpha = mixNameText.alpha;
+						},
+						onComplete: function (twn) {
+							mixRightArrow.alpha = mixLeftArrow.alpha = mixNameText.alpha;
+						}
+					}
+				);
+			}
+
+		}
 
 		availableMixesChanged();
+	}
+
+	private function availableMixesChanged() {
+		if (displayedSongs[selectedSongIdx].availableMixes.length > 1) {
+			mixNameText.color = RedditColor.TEXT;
+			mixLeftArrow.visible = true;
+			mixRightArrow.visible = true;
+		} else {
+			mixNameText.color = RedditColor.TEXT_WEAKER;
+			mixLeftArrow.visible = false;
+			mixRightArrow.visible = false;
+		}
 		changeSelectedMix(0);
+	}
+
+	public function changeSelectedMix(by:Int) {
+		var currentSong = displayedSongs[selectedSongIdx];
+		var mixes = currentSong.availableMixes;
+
+		var oldDifficulty = currentSong.difficulties[selectedDifficultyIdx];
+		selectedMixIdx = currentSong.mixId += by;
+		retainOldDifficulty(oldDifficulty);
+
+		// var mixDisplayName:String = mixes.length > 1 ? mixes[selectedMixIdx] : "-";
+		mixNameText.text = mixes[selectedMixIdx];
+		centerAroundX(mixNameText, optionBarCenterX);
+		if (mixes.length > 1) {
+			repositionMixArrows();
+		}
+
+		availableDifficultiesChanged();
 	}
 
 	private function availableDifficultiesChanged() {
@@ -516,12 +634,12 @@ class FreeplayPlaceState extends MusicBeatState {
 			difficultyText.color = RedditColor.TEXT_WEAK;
 			difficultyLeftArrow.visible = false;
 			difficultyRightArrow.visible = false;
-
 		} else {
 			difficultyText.color = RedditColor.TEXT;
 			difficultyLeftArrow.visible = true;
 			difficultyRightArrow.visible = true;
 		}
+		changeSelectedDifficulty(0);
 	}
 
 	public function changeSelectedDifficulty(by:Int) {
@@ -553,44 +671,7 @@ class FreeplayPlaceState extends MusicBeatState {
 		#end
 	}
 
-	private function availableMixesChanged() {
-		if (displayedSongs[selectedSongIdx].availableMixes.length > 1) {
-			mixNameText.color = RedditColor.TEXT;
-			mixLeftArrow.visible = true;
-			mixRightArrow.visible = true;
-		} else {
-			mixNameText.color = RedditColor.TEXT_WEAK;
-			mixLeftArrow.visible = false;
-			mixRightArrow.visible = false;
-		}
-	}
-
-	public function changeSelectedMix(by:Int) {
-		var currentSong = displayedSongs[selectedSongIdx];
-		var mixes = currentSong.availableMixes;
-
-		selectedMixIdx = currentSong.mixId += by;
-
-		var newMix:String = mixes[selectedMixIdx];
-		var mixDisplayName:String = newMix;
-
-		mixNameText.text = mixDisplayName;
-		centerAroundX(mixNameText, optionBarCenterX);
-		if (mixes.length > 1) {
-			repositionMixArrows();
-		}
-
-		availableDifficultiesChanged();
-		retainOldDifficulty(0, by);
-		changeSelectedDifficulty(0);
-	}
-
-	private function retainOldDifficulty(songBy:Int, mixBy:Int) {
-		var oldSongIdx = CoolUtil.wrapModulo(selectedSongIdx - songBy, displayedSongs.length);
-		var oldSong = displayedSongs[oldSongIdx];
-		var oldSongMixIdx = CoolUtil.wrapModulo(oldSong.mixId - mixBy, oldSong.availableMixDifficulties.length);
-		var oldDifficulty = oldSong.availableMixDifficulties[oldSongMixIdx][selectedDifficultyIdx];
-
+	private function retainOldDifficulty(oldDifficulty:String) {
 		var currentSong = displayedSongs[selectedSongIdx];
 
 		// It is possible that the new song has different difficulties from
