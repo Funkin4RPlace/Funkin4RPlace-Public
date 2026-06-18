@@ -7,36 +7,39 @@ An r/place mod for Friday Night Funkin'.
 > Simply check out the relevant version tags to get where you want. (Probably.)
 
 > [!CAUTION]
-> The instructions below are fairly dated. You will likely run into problems if you wanted to follow them.
-> As a rule of thumb, try downgrading library versions until the errors go away.
+> Most instructions below are fairly dated and are non-exhaustive. You will likely run into problems while following them.
+> As a rule of thumb, try downgrading library versions until the errors go away™.
 
 ## Download & Play
 * [GameBanana](https://gamebanana.com/mods/444552)
 
 ## Building
-You must have [the most up-to-date version of Haxe](https://haxe.org/download/) (*not* Haxe 4.1.5!)
+You must have [the most up-to-date version of Haxe](https://haxe.org/download/) (*not* Haxe 4.3.0!)
 
 Then, run the following:
 ```
+haxelib setup
 haxelib install lime
 haxelib update lime
-haxelib install openfl
-haxelib update openfl
 haxelib install flixel 5.2.2
-haxelib install flixel-addons 3.0.2
 haxelib run lime setup flixel
+haxelib set openfl 9.3.1
+haxelib set flixel-addons 3.0.2
+haxelib set flixel-ui 2.6.0
+haxelib set hscript 2.5.0
 haxelib install newgrounds
 haxelib update newgrounds
 haxelib run flixel-tools setup
 haxelib run lime setup
 haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
-haxelib git hscript https://github.com/HaxeFoundation/hscript
 haxelib git hscript-ex https://github.com/ianharrigan/hscript-ex
 ```
 
 (At the moment, you need to also run `haxelib git linc_luajit https://github.com/nebulazorua/linc_luajit`)
 
 If you get an error about StatePointer (or anything else really) when using Lua, run haxelib remove linc_luajit into Command Prompt/PowerShell, then re-install linc_luajit.
+
+If that does not fix linc_luajit and you are instead getting an error about "hxcpp.h: no such file". Try the steps outlined here: [Comment by AlekEagle under FunkinCrew/Funkin Issue #625](https://github.com/FunkinCrew/Funkin/issues/625#issuecomment-805200377). 
 
 When it asks you for your IDE, you can pick your actual IDE (or, if you don't know / can't identify it, choose `4`). Say yes to adding `flixel` and `lime` as commands.
 
@@ -67,7 +70,7 @@ Instead, go to the individual components tab and choose the following:
 This will take up about 4GB of storage. Once that's done, you can run `lime test windows`. **For our charters! Run `lime test windows -debug` instead**
 
 #### Android
-(NOTE: Android support is currently experimental and has not been tested on an actual device yet)
+(NOTE: Android support is currently experimental and has not been tested in quite some time)
 
 All credit to the [Funkin-android repository](https://github.com/luckydog7/Funkin-android) for the entire tutorial.
 

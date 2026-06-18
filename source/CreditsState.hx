@@ -706,7 +706,7 @@ private function makeCredits():Array<{name:String, members:Array<CreditBlob>}> {
 									"Fun fact: All of this mod's libraries are on the same version as they were on " +
 									"day 1 of development and are very much out of date."
 								),
-							},
+							}, // lol
 							{text: "Fun fact: This quote has been added only so i had a commit for testing!"},
 							{text: "Fact: The Fact Sphere is always right!"},
 							{text: "FICSIT does not waste!"},
