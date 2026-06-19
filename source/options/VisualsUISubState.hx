@@ -197,7 +197,7 @@ class VisualsUISubState extends BaseOptionsMenu
 
 	function onChangeMenuMusic()
 	{
-		CoolUtil.playMenuMusic(changedMusic);
+		CoolUtil.playMenuMusic();
 		changedMusic = false;
 	}
 

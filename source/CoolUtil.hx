@@ -374,29 +374,19 @@ class CoolUtil
 		#end
 	}
 
-	private static var playingMenuMusic = 'freaky';
-	private static var randomSongChoices:Array<MenuMusicInfo> = [
+	private static var playingMenuMusic = '';
+	private static var randomMenuMusicList:Array<String> = ['goddessawe', 'micah'];
+	private static var menuMusicInfoList:Array<MenuMusicInfo> = [
+		{name: 'freaky', bpm: 100},
 		{name: 'goddessawe', bpm: 80},
 		{name: 'micah', bpm: 126},
 	];
-	private static function findMenuMusicInfoByName(name:String):Null<MenuMusicInfo> {
-		for (x in randomSongChoices) {
-			if (x.name == name) {
-				return x;
-			}
-		}
-		return null;
-	}
-	public static function playMenuMusic(volume:Float = 1, randomReplay:Bool = true):Null<MenuMusicInfo> {
-		var music = Paths.formatToSongPath(ClientPrefs.menuMusic);
+	public static function playMenuMusic(volume:Float = 1):Null<MenuMusicInfo> {
+		var music:String = Paths.formatToSongPath(ClientPrefs.menuMusic);
 		switch (music) {
 			case 'random':
-				if (randomReplay || findMenuMusicInfoByName(CoolUtil.playingMenuMusic) == null) {
-					music = CoolUtil.randomChoice(CoolUtil.randomSongChoices).name;
-					CoolUtil.playingMenuMusic = music;
-				} else {
-					return null;
-				}
+				music = CoolUtil.randomChoice(CoolUtil.randomMenuMusicList);
+				CoolUtil.playingMenuMusic = music;
 			case 'none':
 				volume = 0;
 				music = 'micah'; // smallest file size
@@ -405,7 +395,13 @@ class CoolUtil
 				CoolUtil.playingMenuMusic = music;
 		}
 		FlxG.sound.playMusic(Paths.music(music + 'Menu'), volume);
-		return findMenuMusicInfoByName(music);
+		
+		for (musicInfo in CoolUtil.menuMusicInfoList) {
+			if (musicInfo.name == music) {
+				return musicInfo;
+			}
+		}
+		return null;
 	}
 
 	public static inline function d2r(deg:Float):Float {

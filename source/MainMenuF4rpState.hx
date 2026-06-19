@@ -1177,9 +1177,9 @@ class MainMenuF4rpState extends MusicBeatState {
 			textIntroBeatCounter += 1;
 			switch (textIntroBeatCounter) {
 				case 1:
-					var musicInfo = CoolUtil.playMenuMusic(0);
+					var musicInfo = CoolUtil.playMenuMusic(0); // this can return null!
 					FlxG.sound.music.fadeIn(2, 0, 1.0);
-					Conductor.changeBPM(musicInfo.bpm);
+					Conductor.changeBPM(musicInfo == null ? 100 : musicInfo.bpm);
 					allowVirtualStateSwitch = true;
 				case 2:
 					#if PSYCH_WATERMARKS
