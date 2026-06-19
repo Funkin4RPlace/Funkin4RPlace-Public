@@ -30,6 +30,7 @@ import openfl.display.BitmapData;
 
 import AchievementManager.AchievementRegistryEntry;
 import CoolUtil.PointStruct;
+import CoolUtil.MenuMusicInfo;
 import ChainEffects;
 import OrganicPixelErasureShader.HoleOrganicPixelErasureShader;
 import PixelErasureShader.GradientPixelErasureShader;
@@ -380,6 +381,7 @@ class MainMenuF4rpState extends MusicBeatState {
 
 	private var debugKeys:Array<FlxKey>;
 
+	private var musicInfo:Null<MenuMusicInfo>;
 	private var introTexts:Null<Array<Array<String>>>;
 	private var selectedIntroTextIdx:Int;
 	private var textIntroBeatCounter:Int;
@@ -433,7 +435,7 @@ class MainMenuF4rpState extends MusicBeatState {
 		this.pendingVirtualStateSwitch = false;
 		this.allowVirtualStateSwitch = true;
 		this.skipIntroAndTitle = skipIntroAndTitle;
-		this.textIntroBeatCounter = 0;
+		this.textIntroBeatCounter = 100; // please dont kill me
 		this.selectionBlinkProgress = 0.0;
 		this.debugKeys = ClientPrefs.copyNonNoneKeys('debug_1');
 	}
@@ -1176,50 +1178,55 @@ class MainMenuF4rpState extends MusicBeatState {
 		if (virtualState == TITLE_TEXT_INTRO) {
 			textIntroBeatCounter += 1;
 			switch (textIntroBeatCounter) {
-				case 1:
-					var musicInfo = CoolUtil.playMenuMusic(0); // this can return null!
+				case 101:
+					musicInfo = CoolUtil.playMenuMusic(0); // this can return null!
 					FlxG.sound.music.fadeIn(2, 0, 1.0);
 					Conductor.changeBPM(musicInfo == null ? 100 : musicInfo.bpm);
 					allowVirtualStateSwitch = true;
-				case 2:
+				case 102:
 					#if PSYCH_WATERMARKS
 					addIntroAlphabets(['Psych Engine by'], 15);
 					#else
 					addIntroAlphabets(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
 					#end
-				case 4:
+				case 104:
 					#if PSYCH_WATERMARKS
 					addIntroAlphabets(['Shadow Mario', 'RiverOaken', 'shubs'], 15);
 					#else
 					addIntroAlphabets(['present']);
 					#end
-				case 5:
+				case 105:
 					deleteIntroAlphabets();
-				case 6:
+				case 106:
 					#if PSYCH_WATERMARKS
 					addIntroAlphabets(['Not associated', 'with'], -40);
 					#else
 					addIntroAlphabets(['In association', 'with'], -40);
 					#end
-				case 8:
+					textIntroBeatCounter += 100;
+					if (musicInfo != null && musicInfo.name != 'micah') textIntroBeatCounter -= 1;
+				case 208:
 					addIntroAlphabets(['newgrounds'], -40);
 					susgroundsLogo.visible = true;
-				case 9:
+				case 209:
 					deleteIntroAlphabets();
 					susgroundsLogo.visible = false;
-				case 10:
+				case 210:
 					addIntroAlphabets([introTexts[selectedIntroTextIdx][0]]);
-				case 12:
+				case 212:
 					addIntroAlphabets([introTexts[selectedIntroTextIdx][1]]);
-				case 13:
+				case 213:
 					deleteIntroAlphabets();
-				case 14:
+				case 214:
 					addIntroAlphabets(['Funkin']);
-				case 15:
+				case 215:
 					addIntroAlphabets(['4']);
-				case 16:
+				case 216:
 					addIntroAlphabets(['r/place']);
-				case 18:
+					textIntroBeatCounter += 100;
+					if (musicInfo != null && musicInfo.name != 'micah') textIntroBeatCounter += 1;
+				case 318:
+					musicInfo = null;
 					switchVirtualState(TITLE);
 
 			}
@@ -1291,7 +1298,7 @@ class MainMenuF4rpState extends MusicBeatState {
 				commonTitleTextAndFlashingStateEntry();
 				allowVirtualStateSwitch = false; // Not until actual music has been started in first beat.
 				selectedIntroTextIdx = FlxG.random.int(0, introTexts.length - 1);
-				textIntroBeatCounter = 0;
+				textIntroBeatCounter = 100;
 				// @Square789: This plays a random track silently. Replacing it with nonsensical bpm alone doesn't
 				// work for some reason, you actually need to fill FlxG.sound.music to bridge the gap to the first
 				// `beatHit` call. Why? Who knows, don't feel like digging the answer to that up now.
