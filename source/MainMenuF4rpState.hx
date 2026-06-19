@@ -1181,7 +1181,7 @@ class MainMenuF4rpState extends MusicBeatState {
 				case 101:
 					musicInfo = CoolUtil.playMenuMusic(0); // this can return null!
 					FlxG.sound.music.fadeIn(2, 0, 1.0);
-					Conductor.changeBPM(musicInfo == null ? 100 : musicInfo.bpm);
+					Conductor.changeBPM(musicInfo?.bpm ?? 100);
 					allowVirtualStateSwitch = true;
 				case 102:
 					#if PSYCH_WATERMARKS
@@ -1204,7 +1204,7 @@ class MainMenuF4rpState extends MusicBeatState {
 					addIntroAlphabets(['In association', 'with'], -40);
 					#end
 					textIntroBeatCounter += 100;
-					if (musicInfo != null && musicInfo.name != 'micah') textIntroBeatCounter -= 1;
+					if (musicInfo?.name != 'micah') textIntroBeatCounter -= 1;
 				case 208:
 					addIntroAlphabets(['newgrounds'], -40);
 					susgroundsLogo.visible = true;
@@ -1224,7 +1224,7 @@ class MainMenuF4rpState extends MusicBeatState {
 				case 216:
 					addIntroAlphabets(['r/place']);
 					textIntroBeatCounter += 100;
-					if (musicInfo != null && musicInfo.name != 'micah') textIntroBeatCounter += 1;
+					if (musicInfo?.name != 'micah') textIntroBeatCounter += 1;
 				case 318:
 					musicInfo = null;
 					switchVirtualState(TITLE);
