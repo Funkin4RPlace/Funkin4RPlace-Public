@@ -111,6 +111,7 @@
 	<assets path='LICENSE-INTER' rename='LICENSE-INTER.txt' />
 	<assets path='LICENSE-POKEMON-DP-PRO-FONTSTRUCT' rename='LICENSEPOKEMON-DP-PRO-FONTSTRUCT.txt' />
 	<assets path='LICENSE-REDDITMONO.md' />
+	<assets path='LICENSE-COURIER-10-PITCH' rename='LICENSE-COURIER-10-PITCH.txt' />
 	<assets path='.disable_gb1click_filedaddy' rename='' />
 	<assets path='READMEAFTERPLAYING.txt'/>
 	<!-- <template path='mods' /> -->

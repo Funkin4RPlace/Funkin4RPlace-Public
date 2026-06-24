@@ -386,7 +386,7 @@ class LorebookState extends MusicBeatState {
 							textSize: 36,
 							postPadding: 17,
 							color: 0xFFD71F32,
-							font: "Courier New",
+							font: "Courier 10 Pitch",
 							bold: true,
 							effects: [
 								new FlickerQuoteEffect({
@@ -410,7 +410,7 @@ class LorebookState extends MusicBeatState {
 						text: "We recommend playing through all the songs before checking out the Lorebook!",
 						textSize: 28,
 						color: 0xFFD71F32,
-						font: "Courier New",
+						font: "Courier 10 Pitch",
 						bold: true,
 						effects: [
 							new TypeoutQuoteEffect({

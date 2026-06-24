@@ -542,7 +542,7 @@ private function makeCredits():Array<{name:String, members:Array<CreditBlob>}> {
 							"What will you do?"
 						),
 						textSize: 16,
-						font: "Courier New",
+						font: "Courier 10 Pitch",
 						bold: true,
 					},
 					{text: "Follow me on TWITTER @Pale_Artist_"},
