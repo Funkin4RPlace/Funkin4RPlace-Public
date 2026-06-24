@@ -1,4 +1,4 @@
-If you downloaded Funkin' 4 r/place from any other place than an official link listed in [website], you might be in DANGER!!! If you paid for this mod, a) why would you do that and b) you got SCAMMED!
+If you downloaded Funkin' 4 r/place from any other place than an official link listed in https://gamebanana.com/mods/444552, you might be in DANGER!!! If you paid for this mod, a) why would you do that and b) you got SCAMMED!
 
 [music permissions and stuff]
 
